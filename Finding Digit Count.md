@@ -1,14 +1,14 @@
 # Finding Digit Count
 
 Suppose that we have a random integer, such as \( 4321 \). If we have to find how many digits it has, we would simply count them by dividing the number by ten and incrementing a counter until the number reaches zero. However, there is an alternative way to achieve this. Let's look at the number once again:
-$$ 4321 $$
+$$4321$$
 This is a decimal number, therefore each place value in it is a power of ten. So we can break it down to:
-$$ 
-4 \cdot 1000 + 3 \cdot 100 + 2 \cdot 10 + 1 \text{ or } 4 \cdot 10^3 + 3 \cdot 10^2 + 2 \cdot 10^1 + 1 \cdot 10^0 
+$$
+4 \cdot 1000 + 3 \cdot 100 + 2 \cdot 10 + 1 \text{ or } 4 \cdot 10^3 + 3 \cdot 10^2 + 2 \cdot 10^1 + 1 \cdot 10^0
 $$
 By doing this, we can see that, in order for a number to have 4 digits, it must be equal to or greater than \( 1000 \) or \( 10^3 \) and less than the next place value, which is \( 10^4 \) or \( 10000 \). But if we have to generalize this, we can say that any positive integer \( P \) with \( d \) digits must satisfy:
-$$ 
-10^{d-1} \leq P < 10^d 
+$$
+10^{d-1} \leq P < 10^d
 $$
 By expressing it this way, we now have two variables - an integer \( P \) and an unknown exponent \( d \), which is also directly related to the digit count of \( P \). So, if we wish to find the number of digits our integer has, we have to find \( d \). Doing this is incredibly simple, all we have to do is apply a tiny bit of high school math knowledge – logarithms. The base 10 logarithm \( \log_{10}(P) = k \) tells us that, in order to get \( P \), we must raise 10 to the power of \( k \). Deriving from this and our previous inequality, we can now easily find \( d \):
 
