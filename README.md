@@ -1,0 +1,1 @@
+This is a repository with MY notes. I am writing them to explain things to myself in a simple way. The only reason it's public is because I thought it may be useful to somebody, but it isn't an official learning source or anything, just a collection of random things that I learn. 
