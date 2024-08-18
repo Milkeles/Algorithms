@@ -1,49 +1,49 @@
 # Finding Digit Count
 
 Suppose that we have a random integer, such as \( 4321 \). If we have to find how many digits it has, we would simply count them by dividing the number by ten and incrementing a counter until the number reaches zero. However, there is an alternative way to achieve this. Let's look at the number once again:
-\[ 4321 \]
+$$ 4321 $$
 This is a decimal number, therefore each place value in it is a power of ten. So we can break it down to:
-\[ 
+$$ 
 4 \cdot 1000 + 3 \cdot 100 + 2 \cdot 10 + 1 \text{ or } 4 \cdot 10^3 + 3 \cdot 10^2 + 2 \cdot 10^1 + 1 \cdot 10^0 
-\]
+$$
 By doing this, we can see that, in order for a number to have 4 digits, it must be equal to or greater than \( 1000 \) or \( 10^3 \) and less than the next place value, which is \( 10^4 \) or \( 10000 \). But if we have to generalize this, we can say that any positive integer \( P \) with \( d \) digits must satisfy:
-\[ 
+$$ 
 10^{d-1} \leq P < 10^d 
-\]
+$$
 By expressing it this way, we now have two variables - an integer \( P \) and an unknown exponent \( d \), which is also directly related to the digit count of \( P \). So, if we wish to find the number of digits our integer has, we have to find \( d \). Doing this is incredibly simple, all we have to do is apply a tiny bit of high school math knowledge – logarithms. The base 10 logarithm \( \log_{10}(P) = k \) tells us that, in order to get \( P \), we must raise 10 to the power of \( k \). Deriving from this and our previous inequality, we can now easily find \( d \):
 
-\[ 
+$$ 
 \log_{10}(10^{d-1}) \leq \log_{10}(P) < \log_{10}(10^d) 
-\]
+$$
 Simplify:
-\[ 
+$$ 
 d-1 \leq \log_{10}(P) < d 
-\]
+$$
 This tells us that \( d \), the number of digits of \( P \), is the base 10 logarithm of \( P \) rounded up:
-\[ 
+$$ 
 d = \lceil \log_{10}(P) \rceil = 1 + \lfloor \log_{10}(P) \rfloor 
-\]
+$$
 
 You may now wonder **"But what's the point of knowing this?"**. There are several benefits. For starters, it can be done in just one line of code, instead of a whole loop. Pretty cool, huh? Jokes aside, there are two situations when knowing this is actually useful.
 
 The first is when we have to find the number of digits of a number in a non-decimal system, such as binary. This can be done the exact same way we did it with a decimal integer, all we have to do is change the base of the logarithm, for its base tells us how many digits the number has in that system. For example, the number 19 is \( 10011 \) in binary. All we have to do to find its digit count is to calculate the base 2 logarithm of 19 and then round it up (or round it down and add 1). 
 
 Another application of this is if we have to find the digit count of a large product. A good example of this would be to find the number of digits a large factorial has. Doing this the most straightforward way – by multiplying every single number to get the product and then dividing that product to count its digits – would be extremely inefficient and difficult – multiple multiplication and division operations will be performed, and the product will be so large that we won't be able to store it in a built-in data type. Instead, we can use what we learned so far and apply a very convenient property of logarithms:
-\[ 
+$$ 
 \log(x \cdot y) = \log(x) + \log(y)
-\]
+$$
 We know that:
-\[ 
+$$ 
 n! = n \cdot (n-1) \cdot (n-2) \cdots \cdot 1 \text{ or } n! = \prod_{i=1}^{n} i
-\]
+$$
 Therefore, the logarithm of \( n! \) is simply the sum of logarithms of all the numbers:
-\[ 
+$$ 
 \log(n!) = \log(n) + \log(n-1) + \cdots + \log(1) 
-\]
+$$
 or:
-\[ 
+$$ 
 \log(n!) = \sum_{i=1}^{n} \log(i)
-\]
+$$
 By finding this, we have essentially found the digit count of \( n! \), without actually calculating it. The factorial was merely an example; the same technique can be utilized with any product.
 
 Here's a C++ code snippet for this:
