@@ -34,7 +34,7 @@ $$
 Simplify.
 
 $$
-d-1 \leq log_{10}{(P)}<d 
+d-1 \leq log_{10}{(P)} < d 
 $$
 
 This tells us that **d**, the number of digits of **P** is base 10 logarithm of **P** rounded up.
