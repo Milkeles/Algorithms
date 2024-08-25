@@ -4,7 +4,7 @@ Written by H. Hristov (Milkeles)
 
 Tags: [[Computer Science]], [[Algorithms]], [[Arrays]], [[Dynamic Programming]]
 
-## Maximum Subarray (Kadane's Algorithm)
+## Maximum Subarray Problem (Kadane's Algorithm)
 The maximum subarray problem revolves around finding a contiguous subarray in an array of integers that has the maximum possible sum. When the original array consists only of positive numbers, the maximum subarray is the array itself. However, when negative numbers are added to the mix, the problem gets a little more difficult to solve. 
 
 ### Different Approaches
