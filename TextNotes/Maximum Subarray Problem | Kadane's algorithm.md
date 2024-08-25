@@ -1,6 +1,6 @@
 2024-08-18 | 16:30 UTC + 3
 
-Author: H. Hristov (Milkeles)
+Written by H. Hristov (Milkeles)
 
 Tags: [[Computer Science]], [[Algorithms]], [[Arrays]], [[Dynamic Programming]]
 
