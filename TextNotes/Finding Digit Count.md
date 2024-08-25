@@ -1,6 +1,6 @@
 2024-08-18 | 00:42 UTC +3
 
-by H. Hristov (Milkeles)
+Written by H. Hristov (Milkeles)
 
 Tags: [[Computer Science]], [[Mathematics]], [[Algorithms]], [[Competitive Programming]]
 
