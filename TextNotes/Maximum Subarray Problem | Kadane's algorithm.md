@@ -79,7 +79,6 @@ double MaxSum(const vector<int>& X, double L, double U) {
 
     for (int I = M; I >= L; --I) { //THE DIRECTION MATTERS!
         Sum += X[I];
-        cout << X[I] << " + ";
         MaxToLeft = max(MaxToLeft, Sum);
     }
 
@@ -88,7 +87,6 @@ double MaxSum(const vector<int>& X, double L, double U) {
     
     for (int I = M + 1; I <= U; I++) {
         Sum += X[I];
-        cout << X[I] << " + ";
         MaxToRight = max(MaxToRight, Sum);
     }
     double MaxCrossing = MaxToLeft + MaxToRight;
