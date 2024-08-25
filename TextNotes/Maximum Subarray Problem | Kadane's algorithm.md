@@ -7,7 +7,7 @@ Tags: [[Computer Science]], [[Algorithms]], [[Arrays]], [[Dynamic Programming]]
 ## Maximum Subarray (Kadane's Algorithm)
 The maximum subarray problem revolves around finding a contiguous subarray in an array of integers that has the maximum possible sum. When the original array consists only of positive numbers, the maximum subarray is the array itself. However, when negative numbers are added to the mix, the problem gets a little more difficult to solve. 
 
-#### Different Approaches
+### Different Approaches
 Because Kadane's algorithm is extremely simple, let's first explore a few solutions of the problem that were proposed before the algorithm was invented. Doing this will show how big of a difference the algorithm makes. Also, some of them use interesting techniques, the learning of which could be useful for solving other problems.
 
 First, obviously, the most intuitive algorithm uses a brute-force approach. It would work, but not so efficiently. Practically, we need two numbers - the start and end of the subarray. To find them, we have to, firstly, loop through the array once to check which number is the optimal beginning of the maximum subarray. Then for each start we also have to loop through all the remaining numbers to check the optimal end. Finally, for each pair of start and end numbers, we have to loop through every number in between to sum them up, and then compare the sums to find the maximum one. The time complexity of such algorithm would be in the order of **O(n³).** 
@@ -98,7 +98,7 @@ double MaxSum(const vector<int>& X, double L, double U) {
 }
 ```
 
-#### The Linear Algorithm
+### The Linear Algorithm
 After we went through several different ways to solve this problem, it's time to look into Kadane's algorithm - the most efficient and, ironically, the simplest solution. To understand how the algorithm works, we must first understand the following observations: 
 1. The maximum subarray cannot start with a negative sum. Eliminating negative number(s) from the beginning of the subarray and starting over will result in a larger overall sum than including them.
 2. After eliminating subsequences with a negative sum from the beginning of the subarray, the remaining subsequence must start non-negatively and increase the overall sum. Thus, an optimal maximum subarray must start immediately after the elimination of starting sub-subsequences with negative sums.
@@ -126,6 +126,6 @@ for(int i = 0; i < n; ++i) {
 
 The difference between the two versions is that if the array consists **only** of negative numbers, the first algorithm will find the largest negative number as the maximum subarray sum, while the second will return that the maximum subarray sum is zero, which can be interpreted as that there is no maximum subarray, or it is an empty set. The choice which variation to use depends entirely on what we're expected to return for such cases, otherwise, both of these algorithms are linear, or, in other words, their worst case time complexity is **O(n)**.
 
-### REFERENCES
+## REFERENCES
 1. Kadane, J. (2023). Two Kadane Algorithms for the Maximum Sum Subarray Problem. Algorithms 2023, Volume 16, Issue 11, 519. Available online: [Algorithms | Free Full-Text | Two Kadane Algorithms for the Maximum Sum Subarray Problem (mdpi.com)](https://www.mdpi.com/1999-4893/16/11/519)
 2. Bentley, J. Algorithm Design Techniques. Commun. ACM 1984, 27, 865–871. Available online: [Programming pearls (acm.org)](https://dl.acm.org/doi/pdf/10.1145/358234.381162)
