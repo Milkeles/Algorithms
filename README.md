@@ -3,3 +3,4 @@ This is a repository with MY notes. I am writing them to explain things to mysel
 
 # Table Of Contents
 1. [Finding Digit Count of an Integer](https://github.com/Milkeles/Algorithms/blob/master/TextNotes/Finding%20Digit%20Count.md)
+2. M[aximum Subarray Problem (Kadane's Algorithm)](https://github.com/Milkeles/Algorithms/blob/master/TextNotes/Maximum%20Subarray%20(Kadane's%20Algorithm).md)
